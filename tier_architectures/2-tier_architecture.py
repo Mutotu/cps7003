@@ -44,15 +44,15 @@ def create_table(conn):
     except sqlite3.Error as e:
         print(e)
 
-def insert_sample_tasks(conn):
-    tasks = [
-        ('Task 1', 1),
-        ('Task 2', 2),
-        ('Task 3', 3)
-    ]
-    cur = conn.cursor()
-    cur.executemany("INSERT INTO tasks (name, priority) VALUES (?, ?)", tasks)
-    conn.commit()
+# def insert_sample_tasks(conn):
+#     tasks = [
+#         ('Task 1', 1),
+#         ('Task 2', 2),
+#         ('Task 3', 3)
+#     ]
+#     cur = conn.cursor()
+#     cur.executemany("INSERT INTO tasks (name, priority) VALUES (?, ?)", tasks)
+#     conn.commit()
 
 def create_connection(db_file):
     """create a database connection to the SQLite database"""
@@ -79,7 +79,7 @@ def main():
 
     # create a database connection
     conn = create_connection(database)
-    insert_sample_tasks(conn)
+    # insert_sample_tasks(conn)
     with conn:
         # Create the table if it doesn't exist
         create_table(conn)
@@ -100,8 +100,3 @@ def select_all_tasks(conn):
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
