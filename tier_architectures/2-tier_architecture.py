@@ -22,6 +22,11 @@
 #       This layer queries the table to get all the tasks listed in it and their priorities
 #       The tasks and their priorities are printed as a table with headings: “Nb” (this is the task id), “Task” (name of the task), and “Priority” (priority of the task)
 
+# Server Layer
+#     Server (Database) Layer: it sets up the SQLite database “user-tasks.db” and creates a table “tasks” that contains the list of user’s tasks and their priorities
+#     This is the back-end part of the system where the core processing happens
+#     The database is named “user-tasks”
+#     The table is named “tasks”
 
 
 import sqlite3
